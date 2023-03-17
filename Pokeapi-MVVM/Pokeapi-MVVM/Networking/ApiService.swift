@@ -12,7 +12,7 @@ protocol ApiServiceProtocol {
     func callApi<T: Codable>(model: T.Type, completion: @escaping (Result<T, Error>) -> Void)
 }
 
-struct ApiSevice: ApiServiceProtocol {
+struct ApiService: ApiServiceProtocol {
     private var url = URL(string: "")
     mutating func get(url: URL) {
         self.url = url

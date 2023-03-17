@@ -32,13 +32,39 @@ class ListPokemonViewModel: ListPokemonViewProtocol {
     func fetchPokemonDatas() {
         self.apiService?.callApi(model: PokemonModel.self, completion: { response in
             switch response {
-            case .success(let success):
+            case .success(let pokemonsData):
                 print("success")
-                self.bindListPokemonData?(success)
-            case .failure(_):
-                print("fail")
+                self.data = pokemonsData
+                let group = DispatchGroup()
+                
+                for (index, pokemon) in pokemonsData.results.enumerated() {
+                    group.enter()
+                    guard let url = URL(string: pokemon.url) else {
+                        group.leave()
+                        continue
+                    }
+                    self.apiService?.get(url: url)
+                    self.apiService?.callApi(model: PokemonImageModel.self, completion: { response in
+                        switch response {
+                        case .success(let spritesModel):
+                            self.data?.results[index].image = spritesModel
+                        case .failure(let error):
+                            print(error.localizedDescription)
+                        }
+                        group.leave()
+                    })
+                }
+                
+                group.notify(queue: DispatchQueue.main) {
+                    self.bindListPokemonData?(self.data)
+                }
+                
+            case .failure(let error):
+                print(error.localizedDescription)
                 self.bindListPokemonData?(nil)
             }
         })
     }
+    
+    
 }

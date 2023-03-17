@@ -18,6 +18,14 @@
 		36C15DF429C4064600F5C85D /* ListPokemonCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C15DF229C4064600F5C85D /* ListPokemonCollectionViewCell.swift */; };
 		36C15DF529C4064600F5C85D /* ListPokemonCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 36C15DF329C4064600F5C85D /* ListPokemonCollectionViewCell.xib */; };
 		36C15DF729C4067600F5C85D /* ListPokemonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C15DF629C4067600F5C85D /* ListPokemonViewModel.swift */; };
+		36C15DFA29C4196B00F5C85D /* DetailPokeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C15DF929C4196B00F5C85D /* DetailPokeModel.swift */; };
+		36C15DFD29C424C000F5C85D /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 36C15DFC29C424C000F5C85D /* SDWebImage */; };
+		36C15E0229C44F9400F5C85D /* DetailPokemonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C15E0129C44F9400F5C85D /* DetailPokemonViewController.swift */; };
+		36C15E0429C44FAC00F5C85D /* DetailPokemonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C15E0329C44FAC00F5C85D /* DetailPokemonViewModel.swift */; };
+		36C15E0729C4500900F5C85D /* TopDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C15E0529C4500900F5C85D /* TopDetailTableViewCell.swift */; };
+		36C15E0829C4500900F5C85D /* TopDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 36C15E0629C4500900F5C85D /* TopDetailTableViewCell.xib */; };
+		36C15E0B29C4502700F5C85D /* MovesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C15E0929C4502700F5C85D /* MovesTableViewCell.swift */; };
+		36C15E0C29C4502700F5C85D /* MovesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 36C15E0A29C4502700F5C85D /* MovesTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +42,13 @@
 		36C15DF229C4064600F5C85D /* ListPokemonCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListPokemonCollectionViewCell.swift; sourceTree = "<group>"; };
 		36C15DF329C4064600F5C85D /* ListPokemonCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListPokemonCollectionViewCell.xib; sourceTree = "<group>"; };
 		36C15DF629C4067600F5C85D /* ListPokemonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListPokemonViewModel.swift; sourceTree = "<group>"; };
+		36C15DF929C4196B00F5C85D /* DetailPokeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPokeModel.swift; sourceTree = "<group>"; };
+		36C15E0129C44F9400F5C85D /* DetailPokemonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPokemonViewController.swift; sourceTree = "<group>"; };
+		36C15E0329C44FAC00F5C85D /* DetailPokemonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPokemonViewModel.swift; sourceTree = "<group>"; };
+		36C15E0529C4500900F5C85D /* TopDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopDetailTableViewCell.swift; sourceTree = "<group>"; };
+		36C15E0629C4500900F5C85D /* TopDetailTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TopDetailTableViewCell.xib; sourceTree = "<group>"; };
+		36C15E0929C4502700F5C85D /* MovesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovesTableViewCell.swift; sourceTree = "<group>"; };
+		36C15E0A29C4502700F5C85D /* MovesTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovesTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,6 +56,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				36C15DFD29C424C000F5C85D /* SDWebImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +97,7 @@
 		36C15DE829C404F400F5C85D /* Module */ = {
 			isa = PBXGroup;
 			children = (
+				36C15DF829C4195400F5C85D /* Detail Pokemon */,
 				36C15DEA29C4051B00F5C85D /* List Pokemon */,
 			);
 			path = Module;
@@ -130,6 +147,44 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		36C15DF829C4195400F5C85D /* Detail Pokemon */ = {
+			isa = PBXGroup;
+			children = (
+				36C15E0029C44F6400F5C85D /* View Model */,
+				36C15DFF29C44F5B00F5C85D /* View */,
+				36C15DFE29C44F4B00F5C85D /* Model */,
+			);
+			path = "Detail Pokemon";
+			sourceTree = "<group>";
+		};
+		36C15DFE29C44F4B00F5C85D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				36C15DF929C4196B00F5C85D /* DetailPokeModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		36C15DFF29C44F5B00F5C85D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				36C15E0129C44F9400F5C85D /* DetailPokemonViewController.swift */,
+				36C15E0529C4500900F5C85D /* TopDetailTableViewCell.swift */,
+				36C15E0629C4500900F5C85D /* TopDetailTableViewCell.xib */,
+				36C15E0929C4502700F5C85D /* MovesTableViewCell.swift */,
+				36C15E0A29C4502700F5C85D /* MovesTableViewCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		36C15E0029C44F6400F5C85D /* View Model */ = {
+			isa = PBXGroup;
+			children = (
+				36C15E0329C44FAC00F5C85D /* DetailPokemonViewModel.swift */,
+			);
+			path = "View Model";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -146,6 +201,9 @@
 			dependencies = (
 			);
 			name = "Pokeapi-MVVM";
+			packageProductDependencies = (
+				36C15DFC29C424C000F5C85D /* SDWebImage */,
+			);
 			productName = "Pokeapi-MVVM";
 			productReference = 36C15DD129C404C300F5C85D /* Pokeapi-MVVM.app */;
 			productType = "com.apple.product-type.application";
@@ -174,6 +232,9 @@
 				Base,
 			);
 			mainGroup = 36C15DC829C404C300F5C85D;
+			packageReferences = (
+				36C15DFB29C424C000F5C85D /* XCRemoteSwiftPackageReference "SDWebImage" */,
+			);
 			productRefGroup = 36C15DD229C404C300F5C85D /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -192,6 +253,8 @@
 				36C15DDE29C404C500F5C85D /* Assets.xcassets in Resources */,
 				36C15DF529C4064600F5C85D /* ListPokemonCollectionViewCell.xib in Resources */,
 				36C15DDC29C404C300F5C85D /* Main.storyboard in Resources */,
+				36C15E0C29C4502700F5C85D /* MovesTableViewCell.xib in Resources */,
+				36C15E0829C4500900F5C85D /* TopDetailTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -205,10 +268,15 @@
 				36C15DF729C4067600F5C85D /* ListPokemonViewModel.swift in Sources */,
 				36C15DF429C4064600F5C85D /* ListPokemonCollectionViewCell.swift in Sources */,
 				36C15DD929C404C300F5C85D /* ListPokemonViewController.swift in Sources */,
+				36C15E0729C4500900F5C85D /* TopDetailTableViewCell.swift in Sources */,
+				36C15DFA29C4196B00F5C85D /* DetailPokeModel.swift in Sources */,
+				36C15E0229C44F9400F5C85D /* DetailPokemonViewController.swift in Sources */,
 				36C15DF129C405C700F5C85D /* ApiService.swift in Sources */,
 				36C15DD529C404C300F5C85D /* AppDelegate.swift in Sources */,
+				36C15E0B29C4502700F5C85D /* MovesTableViewCell.swift in Sources */,
 				36C15DD729C404C300F5C85D /* SceneDelegate.swift in Sources */,
 				36C15DEF29C4056000F5C85D /* PokemonModel.swift in Sources */,
+				36C15E0429C44FAC00F5C85D /* DetailPokemonViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -424,6 +492,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		36C15DFB29C424C000F5C85D /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImage.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		36C15DFC29C424C000F5C85D /* SDWebImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 36C15DFB29C424C000F5C85D /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImage;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 36C15DC929C404C300F5C85D /* Project object */;
 }

@@ -11,15 +11,16 @@ struct PokemonModel: Codable {
     let count: Int
     let next: String?
     let previous: String?
-    let results: [Results]
+    var results: [Results]
 }
 
 struct Results: Codable {
     let name: String
     let url: String
-    
-    enum CodingKeys: String, CodingKey{
-        case name = "name"
-        case url = "url"
-    }
+    var image: PokemonImageModel?
 }
+
+struct PokemonImageModel: Codable {
+    let sprites: SpritesModel
+}
+
