@@ -18,4 +18,11 @@ class MovesTableViewCell: UITableViewCell {
         // Initialization code
     }
     
+    func setData(moveData: MoveModel){
+        
+        moveName.text = moveData.name
+        accuracyLabel.text = "+\(moveData.detail?.accuracy ?? 0)"
+        effectLabel.text = moveData.detail?.effectString ?? ""
+    }
+    
 }

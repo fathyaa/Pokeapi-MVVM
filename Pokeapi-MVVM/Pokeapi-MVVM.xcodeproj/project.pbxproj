@@ -26,6 +26,7 @@
 		36C15E0829C4500900F5C85D /* TopDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 36C15E0629C4500900F5C85D /* TopDetailTableViewCell.xib */; };
 		36C15E0B29C4502700F5C85D /* MovesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C15E0929C4502700F5C85D /* MovesTableViewCell.swift */; };
 		36C15E0C29C4502700F5C85D /* MovesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 36C15E0A29C4502700F5C85D /* MovesTableViewCell.xib */; };
+		36E239BB29C855610043EF46 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36E239BA29C855610043EF46 /* UIViewExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +50,7 @@
 		36C15E0629C4500900F5C85D /* TopDetailTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TopDetailTableViewCell.xib; sourceTree = "<group>"; };
 		36C15E0929C4502700F5C85D /* MovesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovesTableViewCell.swift; sourceTree = "<group>"; };
 		36C15E0A29C4502700F5C85D /* MovesTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovesTableViewCell.xib; sourceTree = "<group>"; };
+		36E239BA29C855610043EF46 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UIViewExtension.swift; path = ../../../../../UIViewExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		369FC0FA29C7F8B200F43A85 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				36C15DDF29C404C500F5C85D /* LaunchScreen.storyboard */,
+				36C15DDA29C404C300F5C85D /* Main.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		369FC0FB29C7F8C100F43A85 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				36C15DDD29C404C500F5C85D /* Assets.xcassets */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		369FC0FC29C7F8D500F43A85 /* MainDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				36C15DD429C404C300F5C85D /* AppDelegate.swift */,
+				36C15DD629C404C300F5C85D /* SceneDelegate.swift */,
+			);
+			path = MainDelegate;
+			sourceTree = "<group>";
+		};
 		36C15DC829C404C300F5C85D = {
 			isa = PBXGroup;
 			children = (
@@ -82,13 +110,12 @@
 		36C15DD329C404C300F5C85D /* Pokeapi-MVVM */ = {
 			isa = PBXGroup;
 			children = (
+				36E239B929C855450043EF46 /* Extension */,
+				369FC0FC29C7F8D500F43A85 /* MainDelegate */,
+				369FC0FB29C7F8C100F43A85 /* Assets */,
+				369FC0FA29C7F8B200F43A85 /* Storyboard */,
 				36C15DE929C4050600F5C85D /* Networking */,
 				36C15DE829C404F400F5C85D /* Module */,
-				36C15DD429C404C300F5C85D /* AppDelegate.swift */,
-				36C15DD629C404C300F5C85D /* SceneDelegate.swift */,
-				36C15DDA29C404C300F5C85D /* Main.storyboard */,
-				36C15DDD29C404C500F5C85D /* Assets.xcassets */,
-				36C15DDF29C404C500F5C85D /* LaunchScreen.storyboard */,
 				36C15DE229C404C500F5C85D /* Info.plist */,
 			);
 			path = "Pokeapi-MVVM";
@@ -185,6 +212,14 @@
 			path = "View Model";
 			sourceTree = "<group>";
 		};
+		36E239B929C855450043EF46 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				36E239BA29C855610043EF46 /* UIViewExtension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -274,6 +309,7 @@
 				36C15DF129C405C700F5C85D /* ApiService.swift in Sources */,
 				36C15DD529C404C300F5C85D /* AppDelegate.swift in Sources */,
 				36C15E0B29C4502700F5C85D /* MovesTableViewCell.swift in Sources */,
+				36E239BB29C855610043EF46 /* UIViewExtension.swift in Sources */,
 				36C15DD729C404C300F5C85D /* SceneDelegate.swift in Sources */,
 				36C15DEF29C4056000F5C85D /* PokemonModel.swift in Sources */,
 				36C15E0429C44FAC00F5C85D /* DetailPokemonViewModel.swift in Sources */,

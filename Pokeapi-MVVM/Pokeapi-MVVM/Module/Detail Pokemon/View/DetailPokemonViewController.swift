@@ -28,6 +28,10 @@ class DetailPokemonViewController: UIViewController {
             } else {
                 self.detailTableView.backgroundColor = .red
             }
+            print("reload data")
+            DispatchQueue.main.async {
+                self.detailTableView.reloadData()
+            }
         }
     }
 
@@ -51,14 +55,21 @@ extension DetailPokemonViewController: UITableViewDelegate, UITableViewDataSourc
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == 0 {
-        guard let imageData = modelDetail?.sprites.imageUrl,
-              let cell = detailTableView.dequeueReusableCell(withIdentifier: "TopDetailTableViewCell", for: indexPath) as? TopDetailTableViewCell else { return UITableViewCell() }
-        cell.nameLabel.text = modelDetail?.name
-        cell.pokemonImage.sd_setImage(with: URL(string: imageData))
-        return cell
+            guard let cell = detailTableView.dequeueReusableCell(withIdentifier: "TopDetailTableViewCell", for: indexPath) as? TopDetailTableViewCell else { return UITableViewCell() }
+            
+            if let detail = modelDetail {
+            cell.setData(data: detail)
+            }
+            
+            return cell
         } else {
             guard let cell = detailTableView.dequeueReusableCell(withIdentifier: "MovesTableViewCell", for: indexPath) as? MovesTableViewCell else { return UITableViewCell() }
-            cell.moveName.text = modelDetail?.moves[indexPath.row].move.name
+            let moveDetail = modelDetail?.moves[indexPath.row].move
+
+            if let moveDetail = moveDetail {
+            cell.setData(moveData: moveDetail)
+            }
+            
             return cell
         }
     }

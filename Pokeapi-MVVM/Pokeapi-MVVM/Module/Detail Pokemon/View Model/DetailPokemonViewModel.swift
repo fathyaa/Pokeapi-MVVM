@@ -10,13 +10,13 @@ import Foundation
 protocol DetailPokemonViewProtocol {
     var urlString: String { get }
     var bindDetailPokemon: (((DetailPokeModel)?) -> ())? { get set }
-    func fetchPokemonDetail()
+    func fetchPokemonDetailDatas()
 }
 
 class DetailPokemonViewModel: DetailPokemonViewProtocol {
     private var apiService: ApiServiceProtocol?
     var urlString: String
-    var data: DetailPokeModel?
+    var detailPokeModel: DetailPokeModel?
     
     var bindDetailPokemon: (((DetailPokeModel)?) -> ())?
     
@@ -26,14 +26,41 @@ class DetailPokemonViewModel: DetailPokemonViewProtocol {
         if let url = URL(string: urlString){
             self.apiService?.get(url: url)
         }
-        fetchPokemonDetail()
+        fetchPokemonDetailDatas()
     }
     
-    func fetchPokemonDetail() {
+    func fetchPokemonDetailDatas() {
         self.apiService?.callApi(model: DetailPokeModel.self, completion: { response in
             switch response {
             case .success(let detailData):
-                self.bindDetailPokemon?(detailData)
+                print("success get detail pokemon")
+                self.detailPokeModel = detailData
+                let group = DispatchGroup()
+                
+                for (index, move) in detailData.moves.enumerated(){
+                    group.enter()
+                    
+                    guard let detailMoveURL = URL(string: move.move.url) else {
+                        group.leave()
+                        continue
+                    }
+                    
+                    self.apiService?.get(url: detailMoveURL)
+                    self.apiService?.callApi(model: MoveDetailModel.self, completion: { response in
+                        switch response{
+                        case .success(let detailMoveData):
+                            self.detailPokeModel?.moves[index].move.detail = detailMoveData
+                        case .failure(let error):
+                            print(error.localizedDescription)
+                        }
+                        
+                        group.leave()
+                    })
+                }
+                group.notify(queue: DispatchQueue.main) {
+                    self.bindDetailPokemon?(self.detailPokeModel)
+                }
+                
             case .failure(let error):
                 print(error.localizedDescription)
                 self.bindDetailPokemon?(nil)

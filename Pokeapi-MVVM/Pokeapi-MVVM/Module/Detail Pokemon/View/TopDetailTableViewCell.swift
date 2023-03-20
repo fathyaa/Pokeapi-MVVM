@@ -21,11 +21,10 @@ class TopDetailTableViewCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
     
+    func setData(data: DetailPokeModel){
+        nameLabel.text = data.name
+        statLabel.text = "\(data.hp) HP"
+        pokemonImage.sd_setImage(with: URL(string: data.sprites.imageUrl))
+    }
 }

@@ -16,7 +16,7 @@ protocol ListPokemonViewProtocol {
 class ListPokemonViewModel: ListPokemonViewProtocol {
     private var apiService: ApiServiceProtocol?
     var urlString: String
-    var data: PokemonModel?
+    var pokeModel: PokemonModel?
     
     var bindListPokemonData: ((PokemonModel?) -> Void)?
     
@@ -34,7 +34,7 @@ class ListPokemonViewModel: ListPokemonViewProtocol {
             switch response {
             case .success(let pokemonsData):
                 print("success")
-                self.data = pokemonsData
+                self.pokeModel = pokemonsData
                 let group = DispatchGroup()
                 
                 for (index, pokemon) in pokemonsData.results.enumerated() {
@@ -47,7 +47,7 @@ class ListPokemonViewModel: ListPokemonViewProtocol {
                     self.apiService?.callApi(model: PokemonImageModel.self, completion: { response in
                         switch response {
                         case .success(let spritesModel):
-                            self.data?.results[index].image = spritesModel
+                            self.pokeModel?.results[index].image = spritesModel
                         case .failure(let error):
                             print(error.localizedDescription)
                         }
@@ -56,7 +56,7 @@ class ListPokemonViewModel: ListPokemonViewProtocol {
                 }
                 
                 group.notify(queue: DispatchQueue.main) {
-                    self.bindListPokemonData?(self.data)
+                    self.bindListPokemonData?(self.pokeModel)
                 }
                 
             case .failure(let error):

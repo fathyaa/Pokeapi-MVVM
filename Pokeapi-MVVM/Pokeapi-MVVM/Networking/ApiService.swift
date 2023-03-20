@@ -9,7 +9,7 @@ import Foundation
 
 protocol ApiServiceProtocol {
     mutating func get(url: URL)
-    func callApi<T: Codable>(model: T.Type, completion: @escaping (Result<T, Error>) -> Void)
+    func callApi<T: Decodable>(model: T.Type, completion: @escaping (Result<T, Error>) -> Void)
 }
 
 struct ApiService: ApiServiceProtocol {
@@ -18,7 +18,7 @@ struct ApiService: ApiServiceProtocol {
         self.url = url
     }
     
-    func callApi<T>(model: T.Type, completion: @escaping (Result<T, Error>) -> Void) where T: Decodable, T: Encodable {
+    func callApi<T>(model: T.Type, completion: @escaping (Result<T, Error>) -> Void) where T: Decodable {
         guard let url = self.url else { return }
         URLSession.shared.dataTask(with: url) { data, response, error in
 //            let response = response as? HTTPURLResponse
