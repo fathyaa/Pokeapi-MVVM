@@ -3,7 +3,6 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
-        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -21,35 +20,46 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GSR-0v-IkF">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="126"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Razor- Wind" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O4G-f2-5rP">
-                                <rect key="frame" x="20" y="5" width="121" height="30"/>
-                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="21"/>
-                                <color key="textColor" red="0.92549019610000005" green="0.12549019610000001" blue="0.15686274510000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wjs-Sk-hZk">
+                                <rect key="frame" x="15" y="15" width="114" height="35.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Razor- Wind" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O4G-f2-5rP">
+                                        <rect key="frame" x="5" y="5" width="104" height="25.5"/>
+                                        <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="18"/>
+                                        <color key="textColor" systemColor="systemYellowColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="labelColor"/>
+                                <constraints>
+                                    <constraint firstItem="O4G-f2-5rP" firstAttribute="top" secondItem="Wjs-Sk-hZk" secondAttribute="top" constant="5" id="6FZ-jH-Qix"/>
+                                    <constraint firstAttribute="bottom" secondItem="O4G-f2-5rP" secondAttribute="bottom" constant="5" id="Xbz-GR-FDZ"/>
+                                    <constraint firstAttribute="trailing" secondItem="O4G-f2-5rP" secondAttribute="trailing" constant="5" id="aRi-AH-HDv"/>
+                                    <constraint firstItem="O4G-f2-5rP" firstAttribute="leading" secondItem="Wjs-Sk-hZk" secondAttribute="leading" constant="5" id="kZR-e4-8LH"/>
+                                </constraints>
+                            </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5OX-Wd-WNY">
-                                <rect key="frame" x="270.5" y="5" width="29.5" height="30"/>
-                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="17"/>
-                                <color key="textColor" name="AccentColor"/>
+                                <rect key="frame" x="273" y="20.5" width="32" height="24.5"/>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="17"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Ah-03-o3s">
-                                <rect key="frame" x="20" y="45" width="280" height="18.5"/>
+                                <rect key="frame" x="15" y="60.5" width="285" height="18.5"/>
                                 <fontDescription key="fontDescription" name="ChalkboardSE-Light" family="Chalkboard SE" pointSize="13"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="9Ah-03-o3s" secondAttribute="bottom" constant="10" id="2eU-JH-rSM"/>
-                            <constraint firstItem="O4G-f2-5rP" firstAttribute="leading" secondItem="GSR-0v-IkF" secondAttribute="leading" constant="20" id="BoT-08-bsf"/>
-                            <constraint firstItem="5OX-Wd-WNY" firstAttribute="top" secondItem="GSR-0v-IkF" secondAttribute="top" constant="5" id="SVJ-io-bBS"/>
-                            <constraint firstItem="9Ah-03-o3s" firstAttribute="leading" secondItem="O4G-f2-5rP" secondAttribute="leading" id="Ubd-VH-ODI"/>
-                            <constraint firstItem="O4G-f2-5rP" firstAttribute="centerY" secondItem="5OX-Wd-WNY" secondAttribute="centerY" id="XBv-Mm-Xvr"/>
-                            <constraint firstItem="9Ah-03-o3s" firstAttribute="top" secondItem="O4G-f2-5rP" secondAttribute="bottom" constant="10" id="jMB-4v-SLc"/>
-                            <constraint firstItem="O4G-f2-5rP" firstAttribute="top" secondItem="5OX-Wd-WNY" secondAttribute="top" id="pcX-ji-sgi"/>
-                            <constraint firstAttribute="trailing" secondItem="5OX-Wd-WNY" secondAttribute="trailing" constant="20" id="vUW-2W-kpH"/>
-                            <constraint firstAttribute="trailing" secondItem="9Ah-03-o3s" secondAttribute="trailing" constant="20" id="wZT-97-C6S"/>
+                            <constraint firstItem="9Ah-03-o3s" firstAttribute="leading" secondItem="GSR-0v-IkF" secondAttribute="leading" constant="15" id="AFS-Je-lt5"/>
+                            <constraint firstAttribute="trailing" secondItem="9Ah-03-o3s" secondAttribute="trailing" constant="20" id="JLm-4M-oMr"/>
+                            <constraint firstItem="9Ah-03-o3s" firstAttribute="top" secondItem="Wjs-Sk-hZk" secondAttribute="bottom" constant="10" id="L1D-KU-8Ev"/>
+                            <constraint firstItem="Wjs-Sk-hZk" firstAttribute="top" secondItem="GSR-0v-IkF" secondAttribute="top" constant="15" id="fT4-Nm-suz"/>
+                            <constraint firstItem="Wjs-Sk-hZk" firstAttribute="centerY" secondItem="5OX-Wd-WNY" secondAttribute="centerY" id="feM-7Y-OgK"/>
+                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="9Ah-03-o3s" secondAttribute="bottom" constant="10" id="ftl-WG-FtX"/>
+                            <constraint firstItem="Wjs-Sk-hZk" firstAttribute="leading" secondItem="GSR-0v-IkF" secondAttribute="leading" constant="15" id="p3K-na-CPI"/>
+                            <constraint firstAttribute="trailing" secondItem="5OX-Wd-WNY" secondAttribute="trailing" constant="15" id="vUW-2W-kpH"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -65,16 +75,20 @@
                 <outlet property="accuracyLabel" destination="5OX-Wd-WNY" id="oXk-Ta-dmD"/>
                 <outlet property="effectLabel" destination="9Ah-03-o3s" id="Lqu-eO-neh"/>
                 <outlet property="moveName" destination="O4G-f2-5rP" id="MCg-tk-m0y"/>
+                <outlet property="moveView" destination="Wjs-Sk-hZk" id="PQM-Qr-KJN"/>
             </connections>
             <point key="canvasLocation" x="131.8840579710145" y="70.3125"/>
         </tableViewCell>
     </objects>
     <resources>
-        <namedColor name="AccentColor">
-            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

@@ -12,7 +12,12 @@ class ListPokemonCollectionViewCell: UICollectionViewCell {
     static let identifier = "ListPokemonCollectionViewCell"
     @IBOutlet weak var pokeView: UIView!{
         didSet{
-            pokeView.roundCorners(corners: [.topLeft, .topRight], radius: 70)
+            pokeView.roundCorners(corners: [.topLeft, .topRight], radius: 20)
+        }
+    }
+    @IBOutlet weak var labelView: UIView!{
+        didSet{
+            labelView.roundCorners(corners: [.topRight, .topLeft], radius: 20)
         }
     }
     @IBOutlet weak var nameLabel: UILabel!

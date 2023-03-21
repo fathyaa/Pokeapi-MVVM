@@ -7,7 +7,7 @@
 
 import Foundation
 
-// semuanya
+/// semuanya
 struct DetailPokeModel: Decodable {
     let id: Int
     let name: String
@@ -24,19 +24,18 @@ struct DetailPokeModel: Decodable {
         return 0
     }
     
-//    return by index
+///   return by index
 //    var hp: Int {
 //        var health2: Int {
 //            if stats.count > 0 {
 //                return stats[0].baseStat
 //            }
-//
 //            return 0
 //        }
 //    }
 }
 
-// sprites
+/// sprites
 struct SpritesModel: Codable {
     let imageUrl: String
     
@@ -45,7 +44,7 @@ struct SpritesModel: Codable {
     }
 }
 
-// moves
+/// moves
 struct MovesModel: Decodable {
     var move: MoveModel
 }
@@ -83,7 +82,7 @@ struct EffectModel: Codable {
     }
 }
 
-// stats
+/// stats
 struct StatsModel: Codable {
     let baseStat: Int
     let stat: StatModel

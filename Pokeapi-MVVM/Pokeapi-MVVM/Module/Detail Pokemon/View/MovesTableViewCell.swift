@@ -13,6 +13,11 @@ class MovesTableViewCell: UITableViewCell {
     @IBOutlet weak var moveName: UILabel!
     @IBOutlet weak var accuracyLabel: UILabel!
     @IBOutlet weak var effectLabel: UILabel!
+    @IBOutlet weak var moveView: UIView!{
+        didSet{
+            moveView.layer.cornerRadius = 8
+        }
+    }
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

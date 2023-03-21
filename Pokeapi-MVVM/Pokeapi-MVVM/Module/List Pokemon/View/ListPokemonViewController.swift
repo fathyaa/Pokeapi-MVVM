@@ -18,7 +18,22 @@ class ListPokemonViewController: UIViewController {
         super.viewDidLoad()
         title = "PokeDex"
         setupCollectionView()
+        callAPI()
+    }
+    
+    func setupCollectionView(){
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .horizontal
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        collectionView.showsHorizontalScrollIndicator = false
+        collectionView.layer.masksToBounds = false
         
+        listCollectionView.delegate = self
+        listCollectionView.dataSource = self
+        listCollectionView.register(UINib(nibName: "ListPokemonCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: ListPokemonCollectionViewCell.identifier)
+    }
+    
+    func callAPI(){
         self.listPokemonViewModel = ListPokemonViewModel(urlString: "https://pokeapi.co/api/v2/pokemon", apiService: ApiService())
         
         self.listPokemonViewModel?.bindListPokemonData = { pokeModel in
@@ -32,18 +47,6 @@ class ListPokemonViewController: UIViewController {
                 self.listCollectionView.reloadData()
             }
         }
-    }
-    
-    func setupCollectionView(){
-        let layout = UICollectionViewFlowLayout()
-        layout.scrollDirection = .horizontal
-        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        collectionView.showsHorizontalScrollIndicator = false
-        collectionView.layer.masksToBounds = false
-        
-        listCollectionView.delegate = self
-        listCollectionView.dataSource = self
-        listCollectionView.register(UINib(nibName: "ListPokemonCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: ListPokemonCollectionViewCell.identifier)
     }
 }
 

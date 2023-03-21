@@ -10,6 +10,7 @@ import UIKit
 class TopDetailTableViewCell: UITableViewCell {
 
     static let identifier = "TopDetailTableViewCell"
+    @IBOutlet weak var topDetailView: UIView!
     @IBOutlet weak var pokemonImage: UIImageView!{
         didSet{
             pokemonImage.contentMode = .scaleAspectFit
@@ -17,6 +18,11 @@ class TopDetailTableViewCell: UITableViewCell {
     }
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var statLabel: UILabel!
+    @IBOutlet weak var titleView: UIView!{
+        didSet{
+            titleView.roundCorners(corners: [.bottomLeft], radius: 30)
+        }
+    }
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

@@ -19,7 +19,18 @@ class DetailPokemonViewController: UIViewController {
         super.viewDidLoad()
         title = "Detail"
         setupTableView()
-        
+        callAPI()
+    }
+
+    func setupTableView(){
+        detailTableView.dataSource = self
+        detailTableView.delegate = self
+        detailTableView.register(UINib(nibName: "TopDetailTableViewCell", bundle: nil), forCellReuseIdentifier: TopDetailTableViewCell.identifier)
+        detailTableView.register(UINib(nibName: "MovesTableViewCell", bundle: nil), forCellReuseIdentifier: MovesTableViewCell.identifier)
+        detailTableView.separatorStyle = .none
+    }
+    
+    func callAPI(){
         guard let detailUrl = detailUrl else { return }
         self.detailViewModel = DetailPokemonViewModel(urlString: detailUrl, apiService: ApiService())
         self.detailViewModel?.bindDetailPokemon = { detailModel in
@@ -33,13 +44,6 @@ class DetailPokemonViewController: UIViewController {
                 self.detailTableView.reloadData()
             }
         }
-    }
-
-    func setupTableView(){
-        detailTableView.dataSource = self
-        detailTableView.delegate = self
-        detailTableView.register(UINib(nibName: "TopDetailTableViewCell", bundle: nil), forCellReuseIdentifier: TopDetailTableViewCell.identifier)
-        detailTableView.register(UINib(nibName: "MovesTableViewCell", bundle: nil), forCellReuseIdentifier: MovesTableViewCell.identifier)
     }
 }
 
@@ -76,5 +80,9 @@ extension DetailPokemonViewController: UITableViewDelegate, UITableViewDataSourc
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 2
+    }
+    
+    func tableView(_ tableView: UITableView, shouldHighlightRowAt indexPath: IndexPath) -> Bool {
+        return false
     }
 }
